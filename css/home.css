@@ -34,7 +34,7 @@
     linear-gradient(90deg,rgba(8,26,48,.62),rgba(8,26,48,.18) 52%,transparent 78%),
     radial-gradient(120% 80% at 70% -10%,rgba(200,162,74,.16),transparent 55%),
     radial-gradient(100% 100% at 50% 50%,transparent 40%,rgba(8,26,48,.5) 100%),
-    linear-gradient(180deg,rgba(8,26,48,.45) 0%,transparent 30%,transparent 60%,var(--cream-100) 100%);}
+    linear-gradient(180deg,rgba(8,26,48,.45) 0%,transparent 30%,transparent 82%,rgba(251,249,243,.55) 100%);}
 
 .hero__in{position:relative;z-index:4;width:100%;max-width:var(--maxw);margin:0 auto;
   padding:clamp(40px,8vh,90px) var(--pad)}
