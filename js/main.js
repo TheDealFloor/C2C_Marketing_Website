@@ -92,12 +92,6 @@
       var f = parseFloat(pEls[i].getAttribute("data-parallax")) || 0;
       pEls[i].style.transform = "translate3d(0," + (y * f * 100).toFixed(2) + "px,0)";
     }
-    // gentle fade of hero content as it leaves
-    var inner = hero && hero.querySelector(".hero__in");
-    if (inner) {
-      var vh = window.innerHeight || 1;
-      inner.style.opacity = Math.max(0, 1 - (y / vh) * 1.15).toFixed(3);
-    }
     ticking = false;
   }
 
