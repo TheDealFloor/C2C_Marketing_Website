@@ -3,27 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Brokers — Coast 2 Coast Properties</title>
-<meta name="description" content="Bring your inventory to a network of vetted, capital-ready buyers. Coast 2 Coast connects brokers with serious buyers who are approved and ready to move.">
+<title>For Brokers & Sellers — Coast 2 Coast Properties</title>
+<meta name="description" content="Bring your off-market inventory to a network of vetted, capital-ready buyers. Register, get approved, and move deals — with every relationship protected.">
+<script>document.documentElement.className+=' js';</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Spectral:wght@400;500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/pages.css">
 <link rel="icon" href="assets/img/logo.png">
 </head>
 <body>
-
-<!-- ============ TOP BAR ============ -->
-<header class="topbar">
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <img src="assets/img/logo.png" alt="Coast 2 Coast Properties">
-      <span>
-        <span class="bname">Coast 2 Coast</span><br>
-        <span class="bsub">Properties</span>
-      </span>
+<header class="header" id="header">
+  <div class="header__in">
+    <a class="brand" href="index.html" aria-label="Coast 2 Coast Properties — home">
+      <img src="assets/img/logo.png" alt="">
+      <span><span class="brand__name">Coast 2 Coast</span><span class="brand__sub">Properties</span></span>
     </a>
-    <nav class="menu" id="menu">
+    <nav class="nav" id="nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="platform.html">The Platform</a>
       <a href="buyers.html">Buyers</a>
@@ -33,204 +31,103 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="https://coast2coast.thedealfloor.com" class="btn btn-gold">Login</a>
-      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="https://coast2coast.thedealfloor.com" class="btn btn-gold btn-sm">Login</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
-
-<!-- ============ PAGE HERO ============ -->
-<section class="page-hero">
-  <div class="container">
-    <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; For Brokers</p>
-    <p class="eyebrow" style="margin-top:18px">For Brokers &amp; Sellers</p>
-    <h1>Your inventory.<br>In front of buyers who close.</h1>
-    <p style="max-width:54ch">Stop marketing to everyone and converting no one. Bring your commercial listings to Coast 2 Coast and put them directly in front of verified, capital-ready buyers whose buy box actually matches.</p>
-    <div style="margin-top:38px">
-      <a href="https://coast2coast.thedealfloor.com" class="btn btn-gold">Submit a Property</a>
+<section class="page-hero grain">
+  <canvas id="floor-canvas" aria-hidden="true"></canvas>
+  <div class="page-hero__scrim"></div>
+  <div class="wrap">
+    <p class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>For Brokers</p>
+    <p class="eyebrow eyebrow--light reveal" style="margin-top:18px">For Brokers &amp; Sellers</p>
+    <h1 class="reveal" style="--d:120ms">Bring your inventory to<br>capital-ready buyers.</h1>
+    <p class="lede reveal" style="--d:240ms">Have properties to move? Put them in front of a vetted network of buyers who are ready to close — with non-circumvention enforced and every relationship protected inside the platform.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="kicker center reveal">
+      <p class="eyebrow">Why Bring Deals to C2C</p>
+      <span class="rule rule--center"></span>
+      <h2>Your inventory, in front of the right buyers.</h2>
+      <p class="lede head--center">The hardest part of moving an off-market deal is finding a buyer who is real, ready, and discreet. We have already vetted them — and they are waiting on deal flow.</p>
+    </div><div class="features">
+      <article class="feature reveal" style="--d:80ms"><div class="medallion">&#9733;</div><h3>Vetted, Capital-Ready Buyers</h3><p>Every buyer on the platform is verified with proof of funds on file. No tire-kickers, no daisy chains — just buyers who can actually close.</p></article>
+      <article class="feature reveal" style="--d:170ms"><div class="medallion">&#9632;</div><h3>Non-Circumvention Enforced</h3><p>Your relationship is protected by a mandatory NCNDA and a closed ecosystem. Deals close through C2C — your position stays intact.</p></article>
+      <article class="feature reveal" style="--d:260ms"><div class="medallion">&#10148;</div><h3>Move Deals Quietly</h3><p>List off-market, control who sees what, and release financials only after a buyer is verified. Discretion by design.</p></article>
+      <article class="feature reveal" style="--d:350ms"><div class="medallion">&#9678;</div><h3>Matched, Not Broadcast</h3><p>We surface your deal to buyers whose buy box actually fits — not a public blast that burns the asset.</p></article>
+      <article class="feature reveal" style="--d:440ms"><div class="medallion">&#9650;</div><h3>Support Through Close</h3><p>Our team helps coordinate LOIs, documents, and timelines so transactions actually get to the table.</p></article>
+      <article class="feature reveal" style="--d:530ms"><div class="medallion">&#9654;</div><h3>One Network, Coast to Coast</h3><p>Reach serious buyers nationwide from a single, gated platform built for how off-market deals really trade.</p></article>
     </div>
   </div>
 </section>
-
-<!-- ============ THE PROBLEM ============ -->
-<section class="section">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
-      <div>
-        <p class="eyebrow">Why It Works</p>
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="cols2 top">
+      <div class="reveal">
+        <p class="eyebrow">How It Works</p>
         <span class="rule"></span>
-        <h2>Qualified buyers. No tire-kickers.</h2>
-        <p class="lede" style="margin-top:14px">Every buyer on the C2C platform has been reviewed and approved. They've submitted proof of funds, defined their buy box, and signed the NDA. When your deal hits the platform, you're not broadcasting to the public — you're serving it directly to the people most likely to make an offer.</p>
-        <p style="color:var(--muted);margin-top:16px">The result is fewer wasted conversations, faster offers, and transactions that actually close — without your relationships getting exposed or bypassed.</p>
-        <div style="margin-top:32px">
-          <a href="platform.html" class="btn btn-outline">See How the Platform Works</a>
-        </div>
+        <h2 style="margin:6px 0 14px">Three steps to put a deal in front of buyers.</h2>
+        <p class="lede">Approval is quick. We are simply making sure every deal and every party on the platform belongs there.</p>
+        <div style="margin-top:28px"><a href="https://coast2coast.thedealfloor.com" class="btn btn-gold">Register a Deal <span class="ar">&rarr;</span></a></div>
       </div>
-      <div style="display:grid;gap:18px">
-        <div class="card" style="border-left:3px solid var(--gold)">
-          <div class="ic">&#9733;</div>
-          <h3>Matched Distribution</h3>
-          <p>Your listing is matched to buyers whose buy box fits — geography, asset class, price range. No mass-blast marketing. Targeted delivery to the right buyers.</p>
-        </div>
-        <div class="card" style="border-left:3px solid var(--gold)">
-          <div class="ic">&#9678;</div>
-          <h3>Controlled Exposure</h3>
-          <p>Deals are presented in tiers — teaser first, full financials only to approved buyers who've signed the NDA. Your sensitive deal data is protected at every step.</p>
-        </div>
-        <div class="card" style="border-left:3px solid var(--gold)">
-          <div class="ic">&#10148;</div>
-          <h3>Fast Offer Flow</h3>
-          <p>Buyers can submit a soft LOI directly through the platform. You see offers quickly — and every one comes from a buyer who's been vetted.</p>
-        </div>
+      <div class="steps reveal" style="--d:120ms">
+        <div class="step"><div class="step__n">1</div><div><h3>Register &amp; Get Approved</h3><p>Create your broker profile and execute the NCNDA. Our team reviews and approves qualified brokers and sellers.</p></div></div>
+        <div class="step"><div class="step__n">2</div><div><h3>Submit Your Inventory</h3><p>Bring your off-market deal with the basics — asset class, geography, price, and the story. We help prepare the teaser.</p></div></div>
+        <div class="step"><div class="step__n">3</div><div><h3>Get Matched to Buyers</h3><p>We surface your deal to verified buyers whose criteria fit, manage tiered access, and support the transaction through close.</p></div></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ============ HOW IT WORKS ============ -->
-<section class="section tint">
-  <div class="container">
-    <div class="section-head center">
-      <p class="eyebrow">How It Works</p>
-      <span class="rule"></span>
-      <h2>Simple to submit. Structured to close.</h2>
-    </div>
-    <div class="steps" style="max-width:780px;margin:46px auto 0">
-      <div class="step">
-        <div class="num"></div>
-        <div>
-          <h3>Register &amp; Get Approved</h3>
-          <p>Create your broker profile on the platform. Our team reviews your application and gets you set up — typically within one business day.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="num"></div>
-        <div>
-          <h3>Submit Your Property</h3>
-          <p>Upload your offering memorandum, rent roll, T12, and photos. Our team reviews the deal, runs internal underwriting, and prepares it for distribution. Broker information is protected — buyers see the deal, not how to contact you directly.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="num"></div>
-        <div>
-          <h3>Deal Goes Live on the Platform</h3>
-          <p>Your listing is matched to approved buyers whose buy box fits and distributed via the platform dashboard and direct email. Activity — views, interest, questions — is tracked in real time.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="num"></div>
-        <div>
-          <h3>Offers Come In</h3>
-          <p>Interested buyers submit soft LOIs through the platform. Our team forwards qualified offers and coordinates the next steps with you directly.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="num"></div>
-        <div>
-          <h3>Close the Deal</h3>
-          <p>From LOI acceptance through contract and closing, every step flows through the C2C system — documented, tracked, and protected.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHAT WE HANDLE ============ -->
 <section class="section">
-  <div class="container">
-    <div class="section-head center">
-      <p class="eyebrow">What We Handle</p>
-      <span class="rule"></span>
-      <h2>You focus on the deal. We handle the distribution.</h2>
+  <div class="wrap">
+    <div class="kicker center reveal">
+      <p class="eyebrow">What We Move</p>
+      <span class="rule rule--center"></span>
+      <h2>All types of commercial real estate.</h2>
+    </div><div class="assets">
+      <div class="asset reveal" style="--d:80ms"><div class="ic">&#9632;</div><h3>Multifamily</h3><p>Garden-style, mid-rise, and small apartment communities, plus small portfolios.</p></div>
+      <div class="asset reveal" style="--d:140ms"><div class="ic">&#9733;</div><h3>RV Parks & Campgrounds</h3><p>Destination resorts and campgrounds with strong seasonal cash flow.</p></div>
+      <div class="asset reveal" style="--d:200ms"><div class="ic">&#9678;</div><h3>Storage</h3><p>Self-storage and boat/RV storage — durable, operationally simple assets.</p></div>
+      <div class="asset reveal" style="--d:260ms"><div class="ic">&#9650;</div><h3>Commercial</h3><p>Retail, mixed-use, office, and industrial, off-market only.</p></div>
+      <div class="asset reveal" style="--d:320ms"><div class="ic">&#9654;</div><h3>Land</h3><p>Raw and improved parcels for development or hold.</p></div>
+      <div class="asset reveal" style="--d:380ms"><div class="ic">&#10148;</div><h3>Single-Family Portfolios</h3><p>Income-producing residential, individually or at scale.</p></div>
     </div>
-    <div class="grid-3" style="margin-top:46px">
-      <div class="card">
-        <div class="ic">&#9654;</div>
-        <h3>Deal Underwriting</h3>
-        <p>Internal NOI analysis, cap rate, FMV range, and deal scoring — so buyers arrive educated and ready to make real decisions.</p>
-      </div>
-      <div class="card">
-        <div class="ic">&#9650;</div>
-        <h3>Buyer Matching</h3>
-        <p>Your deal is matched to approved buyers by asset class, geography, price range, and return profile — not mass-blasted.</p>
-      </div>
-      <div class="card">
-        <div class="ic">&#9632;</div>
-        <h3>Document Management</h3>
-        <p>NDA gating, tiered document access, watermarking, and tracked downloads — deal information never leaves the platform unprotected.</p>
-      </div>
-      <div class="card">
-        <div class="ic">&#9733;</div>
-        <h3>Activity Dashboard</h3>
-        <p>See who's viewed your listing, how many offers have been submitted, and where things stand — all in one place.</p>
-      </div>
-      <div class="card">
-        <div class="ic">&#9678;</div>
-        <h3>Offer Coordination</h3>
-        <p>When offers come in, we coordinate — forwarding qualified LOIs, answering buyer questions, and keeping the process moving.</p>
-      </div>
-      <div class="card">
-        <div class="ic">&#10148;</div>
-        <h3>Relationship Protection</h3>
-        <p>The NCNDA keeps your broker relationships inside the ecosystem. No circumvention. Every deal flows through C2C from start to close.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="cta grain reveal">
+      <div class="cta__halo"></div>
+      <div class="cta__in">
+        <p class="eyebrow eyebrow--light" style="display:flex;justify-content:center">Get Started</p>
+        <h2 style="margin-top:12px">Have a deal that should move quietly?</h2>
+        <p>Register, get approved, and bring it to a network of vetted buyers who are ready to close — with your relationship protected at every step.</p>
+        <div class="cta__cta"><a href="https://coast2coast.thedealfloor.com" class="btn btn-gold">Register a Deal <span class="ar">&rarr;</span></a><a href="contact.html" class="btn btn-ghost">Talk to Us First</a></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ============ CTA ============ -->
-<section class="section tint">
-  <div class="container">
-    <div class="cta-band">
-      <p class="eyebrow" style="color:var(--gold-bright)">Ready to Submit?</p>
-      <h2>Bring your next deal to C2C.</h2>
-      <p>Register on the platform, submit your property, and let us put it in front of buyers who are ready to move. The process is fast, the access is controlled, and the buyers are real.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px">
-        <a href="https://coast2coast.thedealfloor.com" class="btn btn-gold">Submit a Property</a>
-        <a href="contact.html" class="btn btn-ghost">Talk to Our Team</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <div class="container">
-    <div class="cols">
+  <div class="wrap footer__in">
+    <div class="footer__cols">
       <div>
         <img src="assets/img/logo_transparent.png" alt="Coast 2 Coast Properties">
-        <p style="max-width:34ch">A private marketplace for off-market commercial real estate. Speed, trust, exclusivity — coast to coast.</p>
+        <p style="max-width:34ch;font-size:.96rem">A private marketplace for off-market commercial real estate. Speed, trust, exclusivity — coast to coast.</p>
       </div>
-      <div>
-        <h4>Explore</h4>
-        <a href="platform.html">The Platform</a>
-        <a href="buyers.html">For Buyers</a>
-        <a href="brokers.html">For Brokers</a>
-        <a href="bnb.html">Coast 2 Coast BnB</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://coast2coast.thedealfloor.com">Member Login</a>
-      </div>
-      <div>
-        <h4>Get In Touch</h4>
-        <a href="contact.html">Inquiries &amp; Support</a>
-        <a href="#" class="ph-link"><em>Phone &mdash; placeholder</em></a>
-        <a href="#" class="ph-link"><em>Email &mdash; placeholder</em></a>
-      </div>
+      <div><h4>Explore</h4><a href="platform.html">The Platform</a><a href="buyers.html">For Buyers</a><a href="brokers.html">For Brokers</a><a href="bnb.html">Coast 2 Coast BnB</a></div>
+      <div><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="https://coast2coast.thedealfloor.com">Member Login</a></div>
+      <div><h4>Get In Touch</h4><a href="contact.html">Inquiries &amp; Support</a><a href="#"><em>Phone — placeholder</em></a><a href="#"><em>Email — placeholder</em></a></div>
     </div>
-    <div class="fine">
+    <div class="footer__fine">
       <span>&copy; 2026 Coast 2 Coast Properties. All rights reserved.</span>
       <span>Buyers conduct their own due diligence. Coast 2 Coast Properties is not a broker or agent.</span>
     </div>
   </div>
 </footer>
-
-<script>
-  const b=document.getElementById('burger'),m=document.getElementById('menu');
-  b&&b.addEventListener('click',()=>m.classList.toggle('open'));
-</script>
+<script src="js/deal-floor.js" defer></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

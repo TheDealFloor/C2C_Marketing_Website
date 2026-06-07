@@ -4,72 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us — Coast 2 Coast Properties</title>
-<meta name="description" content="Meet the team behind Coast 2 Coast Properties — experienced operators who've built a private deal ecosystem for serious commercial real estate buyers and brokers.">
+<meta name="description" content="Built by operators who have worked deals and managed relationships. We built the private deal ecosystem we wished had existed.">
+<script>document.documentElement.className+=' js';</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Spectral:wght@400;500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/pages.css">
 <link rel="icon" href="assets/img/logo.png">
-<style>
-  /* superhero portrait frames */
-  .heroes{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:52px}
-  .hero-card{text-align:center}
-  .hero-card .frame{
-    aspect-ratio:.75;
-    border-radius:10px;
-    background:linear-gradient(170deg,var(--navy-900) 0%,var(--navy) 50%,#1e3f62 100%);
-    border:1px solid rgba(200,162,74,.3);
-    box-shadow:var(--shadow);
-    display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
-    padding:24px 20px;
-    position:relative;overflow:hidden;margin-bottom:18px;
-  }
-  .hero-card .frame::before{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(circle at 50% 30%,rgba(200,162,74,.12),transparent 60%);
-  }
-  .hero-card .frame .silhouette{
-    position:absolute;top:0;left:0;right:0;bottom:60px;
-    display:flex;align-items:center;justify-content:center;
-    font-family:var(--sans);text-transform:uppercase;letter-spacing:.14em;
-    font-size:.62rem;color:rgba(255,255,255,.28);
-    flex-direction:column;gap:10px;
-  }
-  .hero-card .frame .silhouette .icon{
-    font-size:4rem;opacity:.18;
-    font-family:var(--display);color:var(--gold-bright);
-  }
-  .hero-card .frame .nameplate{
-    position:relative;z-index:2;
-    background:rgba(8,26,48,.7);border:1px solid rgba(200,162,74,.35);
-    border-radius:6px;padding:12px 18px;width:100%;
-    backdrop-filter:blur(6px);
-  }
-  .hero-card .frame .nameplate .hname{
-    font-family:var(--display);font-size:1.3rem;color:#fff;font-weight:600;
-  }
-  .hero-card .frame .nameplate .htitle{
-    font-family:var(--sans);text-transform:uppercase;letter-spacing:.18em;
-    font-size:.6rem;color:var(--gold-bright);margin-top:4px;
-  }
-  .hero-card .bio{font-size:.95rem;color:var(--muted);line-height:1.55;max-width:28ch;margin:0 auto}
-  .ph-note{display:inline-block;font-family:var(--sans);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);border:1px solid var(--gold);border-radius:3px;padding:2px 8px;margin-top:8px}
-  @media(max-width:880px){.heroes{grid-template-columns:1fr}}
-</style>
 </head>
 <body>
-
-<!-- ============ TOP BAR ============ -->
-<header class="topbar">
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <img src="assets/img/logo.png" alt="Coast 2 Coast Properties">
-      <span>
-        <span class="bname">Coast 2 Coast</span><br>
-        <span class="bsub">Properties</span>
-      </span>
+<header class="header" id="header">
+  <div class="header__in">
+    <a class="brand" href="index.html" aria-label="Coast 2 Coast Properties — home">
+      <img src="assets/img/logo.png" alt="">
+      <span><span class="brand__name">Coast 2 Coast</span><span class="brand__sub">Properties</span></span>
     </a>
-    <nav class="menu" id="menu">
+    <nav class="nav" id="nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="platform.html">The Platform</a>
       <a href="buyers.html">Buyers</a>
@@ -79,204 +31,104 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="https://coast2coast.thedealfloor.com" class="btn btn-gold">Login</a>
-      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="https://coast2coast.thedealfloor.com" class="btn btn-gold btn-sm">Login</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
-
-<!-- ============ PAGE HERO ============ -->
-<section class="page-hero">
-  <div class="container">
-    <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; About Us</p>
-    <p class="eyebrow" style="margin-top:18px">Who We Are</p>
-    <h1>Built by operators.<br>Run for serious players.</h1>
-    <p style="max-width:54ch">Coast 2 Coast Properties was built by people who've worked deals, managed relationships, and seen what happens when the wrong buyers and the wrong sellers end up in the same room. We built the platform we wish had existed.</p>
+<section class="page-hero grain">
+  <canvas id="floor-canvas" aria-hidden="true"></canvas>
+  <div class="page-hero__scrim"></div>
+  <div class="wrap">
+    <p class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>About Us</p>
+    <p class="eyebrow eyebrow--light reveal" style="margin-top:18px">Who We Are</p>
+    <h1 class="reveal" style="--d:120ms">Built by operators.<br>Run for serious players.</h1>
+    <p class="lede reveal" style="--d:240ms">Coast 2 Coast Properties was built by people who have worked deals, managed relationships, and seen what happens when the wrong buyers and sellers end up in the same room. We built the platform we wished had existed.</p>
   </div>
 </section>
-
-<!-- ============ STORY ============ -->
 <section class="section">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
-      <div class="prose">
+  <div class="wrap">
+    <div class="cols2 top">
+      <div class="prose reveal">
         <p class="eyebrow">Our Story</p>
         <span class="rule"></span>
-        <h2>The deal floor didn't exist. So we built it.</h2>
-        <p>Commercial real estate has always traded on relationships — quiet deals, trusted networks, and the right introductions made at the right time. But the infrastructure to support those deals consistently, at scale, and with everyone's interests protected? That didn't exist.</p>
-        <p>We built Coast 2 Coast Properties to be that infrastructure. A private, gated marketplace where buyers are verified before they touch a deal, brokers get their inventory in front of the right people, and every transaction — start to close — flows through a system that protects everyone in the room.</p>
+        <h2 style="margin:6px 0 18px">The deal floor didn't exist.<br>So we built it.</h2>
+        <p>Commercial real estate has always traded on relationships — quiet deals, trusted networks, and the right introductions at the right time. But the infrastructure to support those deals consistently, at scale, with everyone's interests protected? That didn't exist.</p>
+        <p>We built Coast 2 Coast Properties to be that infrastructure: a private, gated marketplace where buyers are verified before they touch a deal, brokers get inventory in front of the right people, and every transaction flows through a system that protects everyone in the room.</p>
         <p>Speed, trust, and exclusivity aren't marketing words for us. They're the three things that make a deal floor actually work.</p>
       </div>
-      <div>
+      <div class="reveal" style="--d:120ms">
         <p class="eyebrow">What We Stand For</p>
         <span class="rule"></span>
-        <div style="display:grid;gap:18px;margin-top:24px">
-          <div class="card" style="border-left:3px solid var(--gold)">
-            <h3>Speed</h3>
-            <p style="color:var(--muted)">Off-market deals move fast or they don't move. The platform eliminates every unnecessary step between interest and offer — so when a deal fits, buyers can act immediately.</p>
-          </div>
-          <div class="card" style="border-left:3px solid var(--gold)">
-            <h3>Trust</h3>
-            <p style="color:var(--muted)">Every member is vetted. Every deal is reviewed. Every relationship is protected by a mandatory NCNDA and enforced inside the ecosystem — not just on paper.</p>
-          </div>
-          <div class="card" style="border-left:3px solid var(--gold)">
-            <h3>Exclusivity</h3>
-            <p style="color:var(--muted)">Not everyone gets access, and that's the point. A deal floor where everyone is welcome is a listing site. C2C is something else — and it closes like it.</p>
-          </div>
+        <div class="vstack" style="margin-top:22px">
+          <div class="vcard"><h3>Speed</h3><p>Off-market deals move fast or they don't move. The platform eliminates every unnecessary step between interest and offer.</p></div>
+          <div class="vcard"><h3>Trust</h3><p>Every member is vetted. Every deal is reviewed. Every relationship is protected by a mandatory NCNDA — enforced inside the ecosystem, not just on paper.</p></div>
+          <div class="vcard"><h3>Exclusivity</h3><p>Not everyone gets access, and that's the point. A deal floor where everyone is welcome is a listing site. C2C is something else — and it closes like it.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ============ TEAM ============ -->
-<section class="section tint">
-  <div class="container">
-    <div class="section-head center">
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="kicker center reveal">
       <p class="eyebrow">The Team</p>
-      <span class="rule"></span>
+      <span class="rule rule--center"></span>
       <h2>The people behind the platform.</h2>
-      <p class="lede" style="margin:14px auto 0">Character portraits drop in here when photos arrive — styled in the superhero/illustrated format. Placeholder frames below. <span class="ph">Waiting on team photos</span></p>
+      <p class="lede head--center">Character portraits drop in here when photos arrive — styled in the larger-than-life format below. Placeholder frames for now.</p>
+    </div><div class="team">
+      <div class="member reveal" style="--d:80ms"><div class="member__frame"><div class="member__ph"><span class="glyph">&#9733;</span><span>Portrait drops in here</span></div><div class="member__plate"><div class="nm">Christy Dodson</div><div class="rl">Deal Operations Lead</div></div></div><p class="member__bio">The operational backbone of C2C — Christy runs deal intake, manages the admin queue, and makes sure every transaction gets the attention it deserves.</p></div>
+      <div class="member reveal" style="--d:200ms"><div class="member__frame"><div class="member__ph"><span class="glyph">&#9678;</span><span>Portrait drops in here</span></div><div class="member__plate"><div class="nm">Laura Byers</div><div class="rl">Senior Operations</div></div></div><p class="member__bio">Laura brings years of real estate and operations experience to C2C — overseeing platform strategy, buyer experience, and the systems that keep the deal floor running at scale.</p></div>
+      <div class="member reveal" style="--d:320ms"><div class="member__frame"><div class="member__ph"><span class="glyph">&#10148;</span><span>Portrait drops in here</span></div><div class="member__plate"><div class="nm">Tom</div><div class="rl">Founder &amp; Platform Architect</div></div></div><p class="member__bio">The builder behind the technology. Tom designed and built the Coast 2 Coast platform from the ground up — a private deal ecosystem engineered for speed, security, and scale.</p></div>
     </div>
-
-    <div class="heroes">
-
-      <!-- CHRISTY -->
-      <div class="hero-card">
-        <div class="frame">
-          <div class="silhouette">
-            <div class="icon">&#9733;</div>
-            Character portrait<br>drops in here
-          </div>
-          <div class="nameplate">
-            <div class="hname">Christy Dodson</div>
-            <div class="htitle">Deal Operations Lead</div>
-          </div>
-        </div>
-        <p class="bio">The operational backbone of C2C. Christy runs deal intake, manages the admin queue, and makes sure every transaction that comes through the platform gets the attention it deserves.</p>
-        <span class="ph-note">Photo placeholder</span>
-      </div>
-
-      <!-- LAURA -->
-      <div class="hero-card">
-        <div class="frame">
-          <div class="silhouette">
-            <div class="icon">&#9678;</div>
-            Character portrait<br>drops in here
-          </div>
-          <div class="nameplate">
-            <div class="hname">Laura Byers</div>
-            <div class="htitle">Senior Operations</div>
-          </div>
-        </div>
-        <p class="bio">Laura brings years of real estate and operations experience to C2C — overseeing platform strategy, buyer experience, and the systems that keep the deal floor running at scale.</p>
-        <span class="ph-note">Photo placeholder</span>
-      </div>
-
-      <!-- TOM -->
-      <div class="hero-card">
-        <div class="frame">
-          <div class="silhouette">
-            <div class="icon">&#10148;</div>
-            Character portrait<br>drops in here
-          </div>
-          <div class="nameplate">
-            <div class="hname">Tom</div>
-            <div class="htitle">Founder &amp; Platform Architect</div>
-          </div>
-        </div>
-        <p class="bio">The builder behind the technology. Tom designed and built the Coast 2 Coast platform from the ground up — a private deal ecosystem engineered for speed, security, and scale.</p>
-        <span class="ph-note">Photo placeholder</span>
-      </div>
-
-    </div>
-
-    <p style="text-align:center;margin-top:40px;font-family:var(--sans);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">Additional team members — <span class="ph">placeholder; add from team list</span></p>
+    <p style="text-align:center;margin-top:40px;font-family:var(--label);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)" class="reveal">Additional team members — placeholder; add from team list</p>
   </div>
 </section>
-
-<!-- ============ PHILOSOPHY ============ -->
 <section class="section">
-  <div class="container">
-    <div class="section-head center">
+  <div class="wrap">
+    <div class="kicker center reveal">
       <p class="eyebrow">How We Operate</p>
-      <span class="rule"></span>
+      <span class="rule rule--center"></span>
       <h2>Principles we don't negotiate on.</h2>
+    </div><div class="assets" style="grid-template-columns:repeat(2,1fr);max-width:880px;margin:50px auto 0">
+      <div class="asset reveal"><h3>Everyone is vetted</h3><p>No unverified buyers. No unreviewed properties. Every member earns their access — and that access means something because of it.</p></div>
+      <div class="asset reveal" style="--d:90ms"><h3>Relationships are protected</h3><p>Non-circumvention isn't optional. Every member signs an NCNDA and every transaction flows through the platform. No exceptions.</p></div>
+      <div class="asset reveal" style="--d:180ms"><h3>Deals are reviewed before they list</h3><p>We don't list every property that comes through the door. Deals are reviewed, underwritten, and prepared before any buyer sees them.</p></div>
+      <div class="asset reveal" style="--d:270ms"><h3>We're operators, not matchmakers</h3><p>We stay involved through close — coordinating offers, tracking documents, and making sure transactions get to the table.</p></div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:860px;margin:46px auto 0">
-      <div class="card">
-        <h3>Everyone is vetted</h3>
-        <p style="color:var(--muted)">No unverified buyers. No unreviewed properties. Every member earns their access — and that access means something because of it.</p>
-      </div>
-      <div class="card">
-        <h3>Relationships are protected</h3>
-        <p style="color:var(--muted)">Non-circumvention isn't optional. Every member signs an NCNDA and every transaction flows through the platform. No exceptions.</p>
-      </div>
-      <div class="card">
-        <h3>Deals are reviewed before they list</h3>
-        <p style="color:var(--muted)">We don't list every property that comes through the door. Deals are reviewed, underwritten, and prepared before they reach any buyer.</p>
-      </div>
-      <div class="card">
-        <h3>We're operators, not just matchmakers</h3>
-        <p style="color:var(--muted)">We stay involved through close — coordinating offers, tracking documents, and making sure transactions actually get to the table.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="cta grain reveal">
+      <div class="cta__halo"></div>
+      <div class="cta__in">
+        <p class="eyebrow eyebrow--light" style="display:flex;justify-content:center">Get In Touch</p>
+        <h2 style="margin-top:12px">Ready to work with us?</h2>
+        <p>Whether you are a buyer looking for your next acquisition, a broker with inventory to move, or an owner curious about BnB management — let's start the conversation.</p>
+        <div class="cta__cta"><a href="contact.html" class="btn btn-gold">Contact Us <span class="ar">&rarr;</span></a><a href="https://coast2coast.thedealfloor.com" class="btn btn-ghost">Join the Platform</a></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ============ CTA ============ -->
-<section class="section tint">
-  <div class="container">
-    <div class="cta-band">
-      <p class="eyebrow" style="color:var(--gold-bright)">Get In Touch</p>
-      <h2>Ready to work with us?</h2>
-      <p>Whether you're a buyer looking for your next acquisition, a broker with inventory to move, or a property owner curious about BnB management — let's start the conversation.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px">
-        <a href="contact.html" class="btn btn-gold">Contact Us</a>
-        <a href="https://coast2coast.thedealfloor.com" class="btn btn-ghost">Join the Platform</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <div class="container">
-    <div class="cols">
+  <div class="wrap footer__in">
+    <div class="footer__cols">
       <div>
         <img src="assets/img/logo_transparent.png" alt="Coast 2 Coast Properties">
-        <p style="max-width:34ch">A private marketplace for off-market commercial real estate. Speed, trust, exclusivity — coast to coast.</p>
+        <p style="max-width:34ch;font-size:.96rem">A private marketplace for off-market commercial real estate. Speed, trust, exclusivity — coast to coast.</p>
       </div>
-      <div>
-        <h4>Explore</h4>
-        <a href="platform.html">The Platform</a>
-        <a href="buyers.html">For Buyers</a>
-        <a href="brokers.html">For Brokers</a>
-        <a href="bnb.html">Coast 2 Coast BnB</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://coast2coast.thedealfloor.com">Member Login</a>
-      </div>
-      <div>
-        <h4>Get In Touch</h4>
-        <a href="contact.html">Inquiries &amp; Support</a>
-        <a href="#" class="ph-link"><em>Phone &mdash; placeholder</em></a>
-        <a href="#" class="ph-link"><em>Email &mdash; placeholder</em></a>
-      </div>
+      <div><h4>Explore</h4><a href="platform.html">The Platform</a><a href="buyers.html">For Buyers</a><a href="brokers.html">For Brokers</a><a href="bnb.html">Coast 2 Coast BnB</a></div>
+      <div><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="https://coast2coast.thedealfloor.com">Member Login</a></div>
+      <div><h4>Get In Touch</h4><a href="contact.html">Inquiries &amp; Support</a><a href="#"><em>Phone — placeholder</em></a><a href="#"><em>Email — placeholder</em></a></div>
     </div>
-    <div class="fine">
+    <div class="footer__fine">
       <span>&copy; 2026 Coast 2 Coast Properties. All rights reserved.</span>
       <span>Buyers conduct their own due diligence. Coast 2 Coast Properties is not a broker or agent.</span>
     </div>
   </div>
 </footer>
-
-<script>
-  const b=document.getElementById('burger'),m=document.getElementById('menu');
-  b&&b.addEventListener('click',()=>m.classList.toggle('open'));
-</script>
+<script src="js/deal-floor.js" defer></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,220 @@
+/* ============================================================
+   Coast 2 Coast Properties — Foundation
+   Tokens · reset · type · header · footer · buttons · motion
+   Static site. No build step. Mobile-first.
+   ============================================================ */
+
+:root{
+  /* Navy — the "deal floor" */
+  --navy-900:#081a30;
+  --navy-800:#0c2340;   /* signature crest navy */
+  --navy-700:#143256;
+  --navy-600:#1e3f62;
+  /* Gold — used like gold leaf, sparingly */
+  --gold-700:#a9842f;
+  --gold-500:#c8a24a;
+  --gold-300:#e3c878;
+  /* Cream / neutrals */
+  --cream-100:#fbf9f3;
+  --cream-200:#f6f2e9;
+  --paper:#ffffff;
+  --ink:#1d2533;
+  --muted:#5b6675;
+
+  --line:rgba(12,35,64,.12);
+  --line-strong:rgba(12,35,64,.20);
+  --line-dark:rgba(255,255,255,.14);
+  --gold-glow:rgba(200,162,74,.18);
+
+  /* Gradients */
+  --grad-floor:linear-gradient(160deg,var(--navy-900),var(--navy-800) 55%,var(--navy-700));
+  --grad-gold:linear-gradient(180deg,var(--gold-300),var(--gold-500));
+  --grad-gold-rule:linear-gradient(90deg,transparent,var(--gold-700),var(--gold-300),var(--gold-700),transparent);
+
+  /* Type */
+  --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --body:"Spectral",Georgia,"Times New Roman",serif;
+  --label:"Jost","Century Gothic",system-ui,sans-serif;
+
+  /* Shadows — navy-tinted, never gray */
+  --shadow-sm:0 10px 30px -16px rgba(8,26,48,.40);
+  --shadow-md:0 24px 60px -24px rgba(8,26,48,.55);
+  --shadow-lg:0 40px 90px -30px rgba(8,26,48,.62);
+  --shadow-gold:0 18px 40px -16px rgba(168,132,47,.55);
+
+  /* Radii — quiet, near-square */
+  --r-xs:2px; --r-sm:4px; --r-md:6px; --r-lg:10px; --r-xl:14px; --r-pill:999px;
+
+  /* Layout */
+  --maxw:1200px;
+  --pad:clamp(20px,4vw,40px);
+  --header-h:84px;
+
+  /* Motion */
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-soft:cubic-bezier(.4,0,.2,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  font-family:var(--body);
+  color:var(--ink);
+  background:var(--cream-100);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--gold-300);color:var(--navy-900)}
+
+/* ---------- Type ---------- */
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.06;color:var(--navy-800);letter-spacing:-.01em}
+h1{font-size:clamp(2.9rem,6.4vw,5.4rem)}
+h2{font-size:clamp(2.1rem,4.4vw,3.4rem)}
+h3{font-size:clamp(1.4rem,2vw,1.7rem);line-height:1.14}
+p{text-wrap:pretty}
+
+.eyebrow{
+  font-family:var(--label);text-transform:uppercase;
+  letter-spacing:.34em;font-size:.72rem;font-weight:500;color:var(--gold-700);
+}
+.eyebrow--light{color:var(--gold-300)}
+.lede{font-size:clamp(1.1rem,1.5vw,1.28rem);color:var(--muted);line-height:1.6;max-width:60ch}
+
+/* gold hairline rule */
+.rule{display:block;width:72px;height:1px;background:var(--grad-gold-rule);margin:20px 0;position:relative}
+.rule::after{content:"";position:absolute;left:0;top:50%;width:6px;height:6px;border-radius:50%;
+  background:var(--gold-300);transform:translate(-1px,-50%);box-shadow:0 0 10px 1px var(--gold-glow)}
+.rule--center{margin-left:auto;margin-right:auto}
+.rule--center::after{left:50%;transform:translate(-50%,-50%)}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.section{padding:clamp(72px,11vw,140px) 0;position:relative}
+.section--tint{background:var(--cream-200)}
+.section--floor{background:var(--grad-floor);color:#fff}
+.section--floor h1,.section--floor h2,.section--floor h3{color:#fff}
+.head{max-width:64ch}
+.head--center{margin:0 auto;text-align:center}
+
+/* ---------- Buttons (engineered micro-interactions) ---------- */
+.btn{
+  --bg:transparent;--fg:#fff;--bd:transparent;
+  position:relative;display:inline-flex;align-items:center;gap:.7em;
+  font-family:var(--label);text-transform:uppercase;letter-spacing:.16em;
+  font-size:.78rem;font-weight:500;line-height:1;
+  padding:16px 30px;border-radius:var(--r-xs);
+  background:var(--bg);color:var(--fg);border:1px solid var(--bd);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),
+             background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease);
+  overflow:hidden;isolation:isolate;
+}
+.btn .ar{transition:transform .35s var(--ease)}
+.btn:hover .ar{transform:translateX(4px)}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn:focus-visible{outline:2px solid var(--gold-300);outline-offset:3px}
+
+.btn-gold{--bg:var(--grad-gold);--fg:var(--navy-900);box-shadow:var(--shadow-sm)}
+.btn-gold::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);
+  transform:translateX(-120%);transition:transform .7s var(--ease)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:var(--shadow-gold)}
+.btn-gold:hover::before{transform:translateX(120%)}
+
+.btn-ghost{--bd:rgba(255,255,255,.45);--fg:#fff}
+.btn-ghost:hover{--bd:var(--gold-300);--fg:var(--gold-300);transform:translateY(-3px)}
+.btn-navy{--bg:var(--navy-800);--fg:#fff}
+.btn-navy:hover{--bg:var(--navy-700);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.btn-outline{--bd:var(--navy-800);--fg:var(--navy-800)}
+.btn-outline:hover{--bg:var(--navy-800);--fg:#fff;transform:translateY(-3px)}
+.btn-sm{padding:12px 22px;font-size:.72rem}
+
+/* ---------- Header ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:60;height:var(--header-h);
+  display:flex;align-items:center;
+  transition:background .4s var(--ease),box-shadow .4s var(--ease),height .4s var(--ease),border-color .4s var(--ease);
+  border-bottom:1px solid transparent;
+}
+.header.scrolled{background:rgba(251,249,243,.86);backdrop-filter:blur(14px) saturate(1.1);
+  border-bottom-color:var(--line);box-shadow:0 1px 0 rgba(255,255,255,.5) inset}
+.header__in{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);
+  display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:13px}
+.brand img{height:52px;width:auto;filter:drop-shadow(0 6px 14px rgba(8,26,48,.25))}
+.brand__name{display:block;font-family:var(--display);font-size:1.2rem;font-weight:600;line-height:1;color:var(--navy-800);white-space:nowrap}
+.brand__sub{display:block;font-family:var(--label);font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-700);margin-top:3px}
+/* on dark hero (before scroll) the brand text is light */
+.header:not(.scrolled) .brand__name{color:#fff}
+.header:not(.scrolled) .brand__sub{color:var(--gold-300)}
+
+.nav{display:flex;align-items:center;gap:clamp(18px,2.4vw,34px)}
+.nav a{font-family:var(--label);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.78);padding:8px 0;position:relative;transition:color .3s var(--ease)}
+.header.scrolled .nav a{color:var(--navy-700)}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;
+  background:var(--gold-500);transition:width .35s var(--ease)}
+.nav a:hover{color:var(--gold-300)}
+.header.scrolled .nav a:hover{color:var(--navy-800)}
+.nav a:hover::after,.nav a.active::after{width:100%}
+.nav a.active{color:#fff}
+.header.scrolled .nav a.active{color:var(--navy-800)}
+
+.nav-cta{display:flex;align-items:center;gap:14px}
+.burger{display:none;flex-direction:column;gap:5px;padding:8px}
+.burger span{width:26px;height:1.5px;background:#fff;transition:.3s var(--ease)}
+.header.scrolled .burger span{background:var(--navy-800)}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--navy-900);color:rgba(255,255,255,.68);padding:72px 0 32px;position:relative;overflow:hidden}
+.footer::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(600px 300px at 85% -20%,var(--gold-glow),transparent 60%);pointer-events:none}
+.footer__in{position:relative;z-index:1}
+.footer__cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.footer img{height:62px;margin-bottom:18px}
+.footer h4{font-family:var(--label);text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;color:var(--gold-300);margin-bottom:18px}
+.footer a{display:block;padding:5px 0;color:rgba(255,255,255,.68);font-size:.96rem;transition:color .25s var(--ease),transform .25s var(--ease)}
+.footer a:hover{color:var(--gold-300);transform:translateX(3px)}
+.footer__fine{border-top:1px solid rgba(255,255,255,.1);margin-top:48px;padding-top:24px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-family:var(--label);font-size:.72rem;letter-spacing:.05em;color:rgba(255,255,255,.42)}
+
+/* ---------- Scroll choreography ----------
+   Hidden only when JS is active; without JS everything shows. */
+.js .reveal{opacity:0;transform:translateY(26px);
+  transition:opacity .9s var(--ease),transform .9s var(--ease);
+  transition-delay:var(--d,0ms);will-change:opacity,transform}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal-blur{filter:blur(8px)}
+.js .reveal-blur.in{filter:blur(0)}
+@media (prefers-reduced-motion:reduce){
+  .js .reveal{opacity:1;transform:none;filter:none;transition:none}
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:920px){
+  .nav{position:fixed;inset:var(--header-h) 0 auto 0;flex-direction:column;align-items:stretch;
+    gap:0;background:rgba(8,26,48,.97);backdrop-filter:blur(16px);
+    padding:8px var(--pad) 24px;transform:translateY(-120%);transition:transform .45s var(--ease);
+    border-bottom:1px solid var(--line-dark)}
+  .nav.open{transform:none}
+  .nav a{color:#fff;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.9rem}
+  .header.scrolled .nav a{color:#fff}
+  .nav a::after{display:none}
+  .burger{display:flex}
+  .burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+  .footer__cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .footer__cols{grid-template-columns:1fr}
+  .brand__name{font-size:1.05rem}
+  .brand img{height:46px}
+}

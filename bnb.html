@@ -4,38 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coast 2 Coast BnB — Short-Term Rental Management</title>
-<meta name="description" content="Coast 2 Coast BnB — professional short-term and bed-and-breakfast property management. Let us handle the details that turn a property into a performing asset.">
+<meta name="description" content="A refined short-term and bed-and-breakfast management business under the Coast 2 Coast brand. The same standard, a separate business.">
+<script>document.documentElement.className+=' js';</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Spectral:wght@400;500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/pages.css">
 <link rel="icon" href="assets/img/logo.png">
-<style>
-  .bnb-hero{
-    background:
-      radial-gradient(900px 400px at 30% 110%, rgba(200,162,74,.22), transparent 60%),
-      linear-gradient(160deg,var(--navy-900),var(--navy) 60%,#1a3d5c);
-  }
-  .bnb-val{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-  .bnb-val .item{text-align:center;padding:32px 24px;background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow-sm)}
-  .bnb-val .item .big{font-family:var(--display);font-size:3rem;color:var(--gold-deep);line-height:1}
-  .bnb-val .item p{font-family:var(--sans);text-transform:uppercase;letter-spacing:.18em;font-size:.66rem;color:var(--muted);margin-top:10px}
-  @media(max-width:880px){.bnb-val{grid-template-columns:1fr}}
-</style>
 </head>
 <body>
-
-<!-- ============ TOP BAR ============ -->
-<header class="topbar">
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <img src="assets/img/logo.png" alt="Coast 2 Coast Properties">
-      <span>
-        <span class="bname">Coast 2 Coast</span><br>
-        <span class="bsub">Properties</span>
-      </span>
+<header class="header" id="header">
+  <div class="header__in">
+    <a class="brand" href="index.html" aria-label="Coast 2 Coast Properties — home">
+      <img src="assets/img/logo.png" alt="">
+      <span><span class="brand__name">Coast 2 Coast</span><span class="brand__sub">Properties</span></span>
     </a>
-    <nav class="menu" id="menu">
+    <nav class="nav" id="nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="platform.html">The Platform</a>
       <a href="buyers.html">Buyers</a>
@@ -45,177 +31,87 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="https://coast2coast.thedealfloor.com" class="btn btn-gold">Login</a>
-      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="https://coast2coast.thedealfloor.com" class="btn btn-gold btn-sm">Login</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
-
-<!-- ============ PAGE HERO ============ -->
-<section class="page-hero bnb-hero">
-  <div class="container">
-    <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Coast 2 Coast BnB</p>
-    <div style="margin-top:18px;margin-bottom:20px;padding:18px 22px;border:1px dashed rgba(200,162,74,.4);border-radius:6px;display:inline-block">
-      <span class="ph" style="margin-left:0">BnB Logo &mdash; placeholder</span>
-    </div>
-    <p class="eyebrow">Coast 2 Coast BnB</p>
-    <h1>Short-term rentals,<br>handled end to end.</h1>
-    <p style="max-width:52ch">A separate hospitality division — the same standard. If you own a short-term rental or bed-and-breakfast property and want it managed by people who know what they're doing, this is your team.</p>
-    <div style="margin-top:38px;display:flex;gap:14px;flex-wrap:wrap">
-      <a href="contact.html" class="btn btn-gold">Talk to Our BnB Team</a>
-      <a href="#" class="btn btn-ghost ph-link"><em>BnB Website &mdash; link placeholder</em></a>
-    </div>
+<section class="page-hero grain">
+  <canvas id="floor-canvas" aria-hidden="true"></canvas>
+  <div class="page-hero__scrim"></div>
+  <div class="wrap">
+    <p class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Coast 2 Coast BnB</p>
+    <p class="eyebrow eyebrow--light reveal" style="margin-top:18px">Coast 2 Coast BnB</p>
+    <h1 class="reveal" style="--d:120ms">Short-term rental<br>management, done right.</h1>
+    <p class="lede reveal" style="--d:240ms">Beyond the deal floor, Coast 2 Coast manages short-term and bed-and-breakfast properties — handling the details that turn a property into a performing asset, so owners don't have to.</p>
   </div>
 </section>
-
-<!-- ============ INTRO ============ -->
 <section class="section">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
-      <div class="prose">
-        <p class="eyebrow">The Division</p>
+  <div class="wrap">
+    <div class="bnb reveal">
+      <div class="bnb__copy">
+        <p class="eyebrow">A Separate Business</p>
         <span class="rule"></span>
-        <h2>A separate business.<br>The same standard.</h2>
-        <p>Coast 2 Coast BnB is the hospitality arm of Coast 2 Coast — a dedicated short-term rental and bed-and-breakfast management service, operating independently from the commercial deal platform but built on the same principles: attention to detail, protected relationships, and results that speak for themselves.</p>
-        <p>We handle the details that turn a property into a performing asset — so owners don't have to.</p>
-        <p><em style="color:var(--muted)">Full services overview and pricing coming soon. Get in touch to learn more.</em> <span class="ph">Placeholder</span></p>
+        <h2 style="margin:6px 0 14px">The same standard, applied to hospitality.</h2>
+        <p class="lede">Coast 2 Coast BnB is our hospitality division — a refined sibling to the deal floor. We manage the property, the guests, and the numbers, with the same discretion and rigor we bring to everything under the brand.</p>
+        <div style="margin-top:26px"><a href="contact.html" class="btn btn-outline">Talk to Us About Your Property <span class="ar">&rarr;</span></a></div>
       </div>
-      <div class="cta-band" style="border-radius:8px;background:linear-gradient(150deg,var(--navy-900),var(--navy))">
-        <p class="eyebrow" style="color:var(--gold-bright)">Hospitality Division</p>
-        <h2 style="color:#fff;font-size:2rem;margin:14px 0">Own a short-term rental?</h2>
-        <p style="color:rgba(255,255,255,.8)">Let us manage it — listing optimization, guest experience, cleaning coordination, and everything in between. We turn passive ownership into performing income.</p>
-        <div style="margin-top:28px">
-          <a href="contact.html" class="btn btn-gold">Get in Touch</a>
-        </div>
+      <div class="bnb__visual grain">
+        <div class="logo-ph">BnB Logo — drops in here</div>
+        <p class="eyebrow eyebrow--light">Hospitality Division</p>
+        <h3 style="margin-top:10px">A performing asset,<br>handled end to end.</h3>
+        <p style="color:rgba(255,255,255,.8);margin-top:14px">From listing and pricing to turnover and guest care — we run it like an operator, not a hobby.</p>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ============ SERVICES COMING SOON ============ -->
-<section class="section tint">
-  <div class="container">
-    <div class="section-head center">
-      <p class="eyebrow">Services</p>
-      <span class="rule"></span>
-      <h2>What we handle for property owners.</h2>
-      <p class="lede" style="margin:14px auto 0">Full service detail and pricing coming soon. <span class="ph">Placeholder — content from Christy/Tom call</span></p>
-    </div>
-    <div class="grid-3" style="margin-top:46px">
-      <div class="card">
-        <div class="ic">&#9733;</div>
-        <h3>Listing Optimization</h3>
-        <p>Professional photography, SEO-optimized descriptions, and pricing strategy across Airbnb, VRBO, Booking.com, and direct booking channels.</p>
-      </div>
-      <div class="card">
-        <div class="ic">&#9678;</div>
-        <h3>Guest Experience</h3>
-        <p>Check-in coordination, 24/7 guest communication, issue resolution, and the small touches that drive five-star reviews.</p>
-      </div>
-      <div class="card">
-        <div class="ic">&#10148;</div>
-        <h3>Operations &amp; Maintenance</h3>
-        <p>Cleaning coordination, maintenance scheduling, restocking, and inspection management — so the property is always guest-ready.</p>
-      </div>
-      <div class="card">
-        <div class="ic">&#9650;</div>
-        <h3>Revenue Management</h3>
-        <p>Dynamic pricing, occupancy tracking, and performance reporting — we manage for revenue, not just occupancy.</p>
-      </div>
-      <div class="card">
-        <div class="ic">&#9632;</div>
-        <h3>Owner Reporting</h3>
-        <p>Clear, regular reporting on bookings, revenue, expenses, and net performance — so you always know how your asset is performing.</p>
-      </div>
-      <div class="card">
-        <div class="ic">&#9654;</div>
-        <h3>Local Expertise</h3>
-        <p>On-the-ground knowledge of your market — regulations, seasonal demand, competitive positioning — handled by people who know the territory.</p>
-      </div>
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="kicker center reveal">
+      <p class="eyebrow">What We Handle</p>
+      <span class="rule rule--center"></span>
+      <h2>Full-service management, nothing left to chance.</h2>
+    </div><div class="features">
+      <article class="feature reveal" style="--d:80ms"><div class="medallion">&#9733;</div><h3>Listing & Pricing</h3><p>Professional listings and dynamic pricing tuned to seasonality and demand, so every night is working.</p></article>
+      <article class="feature reveal" style="--d:170ms"><div class="medallion">&#9678;</div><h3>Guest Experience</h3><p>Vetted guests, seamless check-in, and responsive support that protects your reviews and your asset.</p></article>
+      <article class="feature reveal" style="--d:260ms"><div class="medallion">&#10148;</div><h3>Turnover & Upkeep</h3><p>Coordinated cleaning, maintenance, and restocking — the operational details that keep a property performing.</p></article>
+      <article class="feature reveal" style="--d:350ms"><div class="medallion">&#9632;</div><h3>Owner Reporting</h3><p>Clear statements and transparent numbers, so you always know how your property is performing.</p></article>
+      <article class="feature reveal" style="--d:440ms"><div class="medallion">&#9650;</div><h3>Compliance & Care</h3><p>Permits, taxes, and house standards handled with the same rigor we bring to every deal.</p></article>
+      <article class="feature reveal" style="--d:530ms"><div class="medallion">&#9654;</div><h3>One Point of Contact</h3><p>A single team that owns the outcome — discreet, accountable, and easy to reach.</p></article>
     </div>
   </div>
 </section>
-
-<!-- ============ THE CONNECTION ============ -->
 <section class="section">
-  <div class="container">
-    <div class="split">
-      <div class="copy">
-        <p class="eyebrow">The Connection to C2C</p>
-        <span class="rule"></span>
-        <h2>Buying an investment property? We can manage it too.</h2>
-        <p style="color:var(--muted);margin-top:14px">If you're acquiring a short-term rental through the Coast 2 Coast commercial platform — or if you already own one and want professional management — Coast 2 Coast BnB is a natural next step.</p>
-        <p style="color:var(--muted);margin-top:12px">Two separate businesses. One standard. One team you can trust from acquisition to operation.</p>
-        <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap">
-          <a href="buyers.html" class="btn btn-outline">Explore the Platform</a>
-          <a href="contact.html" class="btn btn-navy">Contact BnB Team</a>
-        </div>
-      </div>
-      <div class="visual">
-        <p class="eyebrow">Dual Division Advantage</p>
-        <h2 style="color:#fff;font-size:1.8rem;margin:16px 0">From deal to door<br>— we're with you.</h2>
-        <p style="color:rgba(255,255,255,.8)">Acquire through C2C Properties. Manage through C2C BnB. The team knows the asset, the market, and the expectations from day one.</p>
-        <div style="margin-top:28px">
-          <a href="contact.html" class="btn btn-gold">Start the Conversation</a>
-        </div>
+  <div class="wrap">
+    <div class="cta grain reveal">
+      <div class="cta__halo"></div>
+      <div class="cta__in">
+        <p class="eyebrow eyebrow--light" style="display:flex;justify-content:center">Get Started</p>
+        <h2 style="margin-top:12px">Own a property that should be performing?</h2>
+        <p>Tell us about it. We will handle the management, the guests, and the numbers — so your property becomes a performing asset without the day-to-day.</p>
+        <div class="cta__cta"><a href="contact.html" class="btn btn-gold">Start the Conversation <span class="ar">&rarr;</span></a><a href="index.html" class="btn btn-ghost">Back to the Deal Floor</a></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ============ CTA ============ -->
-<section class="section tint">
-  <div class="container">
-    <div class="cta-band">
-      <p class="eyebrow" style="color:var(--gold-bright)">Coast 2 Coast BnB</p>
-      <h2>Let's talk about your property.</h2>
-      <p>Whether you're already operating a short-term rental or just acquired one, our team is ready to discuss what professional management looks like for your specific situation.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px">
-        <a href="contact.html" class="btn btn-gold">Get in Touch</a>
-        <a href="#" class="btn btn-ghost ph-link"><em>Visit BnB Site &mdash; link placeholder</em></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <div class="container">
-    <div class="cols">
+  <div class="wrap footer__in">
+    <div class="footer__cols">
       <div>
         <img src="assets/img/logo_transparent.png" alt="Coast 2 Coast Properties">
-        <p style="max-width:34ch">A private marketplace for off-market commercial real estate. Speed, trust, exclusivity — coast to coast.</p>
+        <p style="max-width:34ch;font-size:.96rem">A private marketplace for off-market commercial real estate. Speed, trust, exclusivity — coast to coast.</p>
       </div>
-      <div>
-        <h4>Explore</h4>
-        <a href="platform.html">The Platform</a>
-        <a href="buyers.html">For Buyers</a>
-        <a href="brokers.html">For Brokers</a>
-        <a href="bnb.html">Coast 2 Coast BnB</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://coast2coast.thedealfloor.com">Member Login</a>
-      </div>
-      <div>
-        <h4>Get In Touch</h4>
-        <a href="contact.html">Inquiries &amp; Support</a>
-        <a href="#" class="ph-link"><em>Phone &mdash; placeholder</em></a>
-        <a href="#" class="ph-link"><em>Email &mdash; placeholder</em></a>
-      </div>
+      <div><h4>Explore</h4><a href="platform.html">The Platform</a><a href="buyers.html">For Buyers</a><a href="brokers.html">For Brokers</a><a href="bnb.html">Coast 2 Coast BnB</a></div>
+      <div><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="https://coast2coast.thedealfloor.com">Member Login</a></div>
+      <div><h4>Get In Touch</h4><a href="contact.html">Inquiries &amp; Support</a><a href="#"><em>Phone — placeholder</em></a><a href="#"><em>Email — placeholder</em></a></div>
     </div>
-    <div class="fine">
+    <div class="footer__fine">
       <span>&copy; 2026 Coast 2 Coast Properties. All rights reserved.</span>
       <span>Buyers conduct their own due diligence. Coast 2 Coast Properties is not a broker or agent.</span>
     </div>
   </div>
 </footer>
-
-<script>
-  const b=document.getElementById('burger'),m=document.getElementById('menu');
-  b&&b.addEventListener('click',()=>m.classList.toggle('open'));
-</script>
+<script src="js/deal-floor.js" defer></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

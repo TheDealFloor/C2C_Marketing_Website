@@ -4,40 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Coast 2 Coast Properties</title>
-<meta name="description" content="Get in touch with the Coast 2 Coast team — buyers, brokers, BnB inquiries, and general questions welcome.">
+<meta name="description" content="Buyer, broker, or property owner — tell us who you are and what you are looking for. Every inquiry is reviewed by our team.">
+<script>document.documentElement.className+=' js';</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Spectral:wght@400;500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/pages.css">
 <link rel="icon" href="assets/img/logo.png">
-<style>
-  .contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:start}
-  .contact-info{display:grid;gap:24px;margin-top:34px}
-  .info-block{display:flex;gap:18px;align-items:flex-start}
-  .info-block .ic{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold-bright);font-family:var(--display);font-size:1.2rem;display:grid;place-items:center}
-  .info-block h4{font-family:var(--sans);text-transform:uppercase;letter-spacing:.16em;font-size:.68rem;color:var(--gold-deep);margin-bottom:5px}
-  .info-block p,.info-block a{color:var(--muted);font-size:.97rem}
-  .info-block a:hover{color:var(--navy)}
-  .path-cards{display:grid;gap:16px;margin-top:34px}
-  .path-card{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:22px 26px;box-shadow:var(--shadow-sm)}
-  .path-card h4{font-family:var(--sans);text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;color:var(--gold-deep);margin-bottom:6px}
-  .path-card p{color:var(--muted);font-size:.94rem;margin-bottom:12px}
-  @media(max-width:880px){.contact-grid{grid-template-columns:1fr}}
-</style>
 </head>
 <body>
-
-<!-- ============ TOP BAR ============ -->
-<header class="topbar">
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <img src="assets/img/logo.png" alt="Coast 2 Coast Properties">
-      <span>
-        <span class="bname">Coast 2 Coast</span><br>
-        <span class="bsub">Properties</span>
-      </span>
+<header class="header" id="header">
+  <div class="header__in">
+    <a class="brand" href="index.html" aria-label="Coast 2 Coast Properties — home">
+      <img src="assets/img/logo.png" alt="">
+      <span><span class="brand__name">Coast 2 Coast</span><span class="brand__sub">Properties</span></span>
     </a>
-    <nav class="menu" id="menu">
+    <nav class="nav" id="nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="platform.html">The Platform</a>
       <a href="buyers.html">Buyers</a>
@@ -47,162 +31,67 @@
       <a href="contact.html" class="active">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="https://coast2coast.thedealfloor.com" class="btn btn-gold">Login</a>
-      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="https://coast2coast.thedealfloor.com" class="btn btn-gold btn-sm">Login</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
-
-<!-- ============ PAGE HERO ============ -->
-<section class="page-hero">
-  <div class="container">
-    <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</p>
-    <p class="eyebrow" style="margin-top:18px">Contact Us</p>
-    <h1>Let's start the<br>conversation.</h1>
-    <p style="max-width:50ch">Whether you're a buyer, a broker, or a property owner — reach out and we'll get back to you quickly. Real people, real answers.</p>
+<section class="page-hero grain">
+  <canvas id="floor-canvas" aria-hidden="true"></canvas>
+  <div class="page-hero__scrim"></div>
+  <div class="wrap">
+    <p class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Contact</p>
+    <p class="eyebrow eyebrow--light reveal" style="margin-top:18px">Get In Touch</p>
+    <h1 class="reveal" style="--d:120ms">Start the conversation.</h1>
+    <p class="lede reveal" style="--d:240ms">Buyer, broker, or property owner — tell us who you are and what you're looking for. Inquiries are reviewed by our team, and every member is vetted before access.</p>
   </div>
 </section>
-
-<!-- ============ CONTACT BODY ============ -->
 <section class="section">
-  <div class="container">
+  <div class="wrap">
     <div class="contact-grid">
-
-      <!-- FORM SIDE -->
-      <div>
-        <p class="eyebrow">Send a Message</p>
+      <div class="reveal">
+        <p class="eyebrow">Send an Inquiry</p>
         <span class="rule"></span>
-        <p style="color:var(--muted);margin-top:8px">Tell us a little about who you are and what you're looking for. We'll follow up directly. <span class="ph">Contact form handler deferred — discuss with Tom</span></p>
-
-        <form class="form" style="margin-top:28px" action="#" method="POST">
-          <div class="field">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required>
+        <h2 style="margin:6px 0 22px">Tell us a little about you.</h2>
+        <form class="form" id="contactForm">
+          <div class="row2">
+            <div class="field"><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Jane Investor" required></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="jane@capital.com" required></div>
           </div>
-          <div class="field">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required>
-          </div>
-          <div class="field">
-            <label for="phone">Phone Number <span style="color:var(--muted);font-size:.85em;text-transform:none;letter-spacing:0">(optional)</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
-          </div>
-          <div class="field">
-            <label for="role">I am a…</label>
-            <select id="role" name="role">
-              <option value="">Select one</option>
-              <option value="buyer">Buyer / Investor</option>
-              <option value="broker">Broker / Seller</option>
-              <option value="bnb">BnB / Property Owner</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="What are you looking for, or what can we help with?"></textarea>
-          </div>
-          <p class="form-note">By submitting this form you agree that Coast 2 Coast Properties may contact you regarding your inquiry. We don't sell or share your information.</p>
-          <div>
-            <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Send Message</button>
-          </div>
-          <p class="form-note" style="text-align:center"><span class="ph">Form action not yet wired — placeholder submit</span></p>
+          <div class="field"><label for="role">I am a…</label><select id="role" name="role"><option>Buyer</option><option>Broker / Seller</option><option>Property Owner</option><option>Connector</option></select></div>
+          <div class="field"><label for="msg">What are you looking for?</label><textarea id="msg" name="msg" rows="5" placeholder="Geography, asset class, typical deal size, timeline…"></textarea></div>
+          <div><button type="submit" class="btn btn-gold">Submit Inquiry <span class="ar">&rarr;</span></button></div>
+          <p class="form__note">By submitting, you agree to be contacted about Coast 2 Coast Properties. Access requires a signed NCNDA.</p>
         </form>
       </div>
-
-      <!-- INFO SIDE -->
-      <div>
-        <p class="eyebrow">Direct Contact</p>
-        <span class="rule"></span>
-        <div class="contact-info">
-          <div class="info-block">
-            <div class="ic">&#9990;</div>
-            <div>
-              <h4>Phone</h4>
-              <p><a href="#" class="ph-link"><em>Phone number &mdash; placeholder</em></a></p>
-            </div>
-          </div>
-          <div class="info-block">
-            <div class="ic">&#9993;</div>
-            <div>
-              <h4>Email</h4>
-              <p><a href="#" class="ph-link"><em>Email address &mdash; placeholder</em></a></p>
-            </div>
-          </div>
-          <div class="info-block">
-            <div class="ic">&#9670;</div>
-            <div>
-              <h4>Platform</h4>
-              <p><a href="https://coast2coast.thedealfloor.com">coast2coast.thedealfloor.com</a></p>
-              <p style="margin-top:4px;font-size:.88rem">Log in or register for full platform access.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:42px">
-          <p class="eyebrow">Not sure where to start?</p>
-          <span class="rule"></span>
-          <div class="path-cards" style="margin-top:20px">
-            <div class="path-card">
-              <h4>I'm a Buyer</h4>
-              <p>Looking for off-market commercial deals. Want to get on the platform and start receiving matched opportunities.</p>
-              <a href="buyers.html" class="btn btn-navy" style="font-size:.72rem;padding:10px 20px">Buyer Overview</a>
-            </div>
-            <div class="path-card">
-              <h4>I'm a Broker or Seller</h4>
-              <p>I have commercial inventory to move and want to put it in front of verified, capital-ready buyers.</p>
-              <a href="brokers.html" class="btn btn-navy" style="font-size:.72rem;padding:10px 20px">Broker Overview</a>
-            </div>
-            <div class="path-card">
-              <h4>BnB / Short-Term Rental</h4>
-              <p>I own or am acquiring a short-term rental and I'm interested in professional management services.</p>
-              <a href="bnb.html" class="btn btn-navy" style="font-size:.72rem;padding:10px 20px">BnB Overview</a>
-            </div>
-          </div>
-        </div>
+      <div class="vstack reveal" style="--d:120ms">
+        <div class="icard accent"><h3>Already a member?</h3><p style="color:var(--muted);margin-bottom:20px">Head straight to the platform to view your matched deals and submit offers.</p><a href="https://coast2coast.thedealfloor.com" class="btn btn-navy">Login to the Platform <span class="ar">&rarr;</span></a></div>
+        <div class="icard"><h3>Direct lines</h3><div class="line"><div class="k">Phone</div><div class="v">Placeholder — add direct line</div></div><div class="line"><div class="k">Email</div><div class="v">Placeholder — add inbox</div></div></div>
       </div>
-
     </div>
   </div>
 </section>
-
-<!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <div class="container">
-    <div class="cols">
+  <div class="wrap footer__in">
+    <div class="footer__cols">
       <div>
         <img src="assets/img/logo_transparent.png" alt="Coast 2 Coast Properties">
-        <p style="max-width:34ch">A private marketplace for off-market commercial real estate. Speed, trust, exclusivity — coast to coast.</p>
+        <p style="max-width:34ch;font-size:.96rem">A private marketplace for off-market commercial real estate. Speed, trust, exclusivity — coast to coast.</p>
       </div>
-      <div>
-        <h4>Explore</h4>
-        <a href="platform.html">The Platform</a>
-        <a href="buyers.html">For Buyers</a>
-        <a href="brokers.html">For Brokers</a>
-        <a href="bnb.html">Coast 2 Coast BnB</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://coast2coast.thedealfloor.com">Member Login</a>
-      </div>
-      <div>
-        <h4>Get In Touch</h4>
-        <a href="contact.html">Inquiries &amp; Support</a>
-        <a href="#" class="ph-link"><em>Phone &mdash; placeholder</em></a>
-        <a href="#" class="ph-link"><em>Email &mdash; placeholder</em></a>
-      </div>
+      <div><h4>Explore</h4><a href="platform.html">The Platform</a><a href="buyers.html">For Buyers</a><a href="brokers.html">For Brokers</a><a href="bnb.html">Coast 2 Coast BnB</a></div>
+      <div><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="https://coast2coast.thedealfloor.com">Member Login</a></div>
+      <div><h4>Get In Touch</h4><a href="contact.html">Inquiries &amp; Support</a><a href="#"><em>Phone — placeholder</em></a><a href="#"><em>Email — placeholder</em></a></div>
     </div>
-    <div class="fine">
+    <div class="footer__fine">
       <span>&copy; 2026 Coast 2 Coast Properties. All rights reserved.</span>
       <span>Buyers conduct their own due diligence. Coast 2 Coast Properties is not a broker or agent.</span>
     </div>
   </div>
 </footer>
-
+<script src="js/deal-floor.js" defer></script>
+<script src="js/main.js" defer></script>
 <script>
-  const b=document.getElementById('burger'),m=document.getElementById('menu');
-  b&&b.addEventListener('click',()=>m.classList.toggle('open'));
+(function(){var f=document.getElementById('contactForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();f.innerHTML='<div class="formsent"><p class="eyebrow">Inquiry Received</p><span class="rule"></span><h3 style="margin:6px 0 10px">Thank you — your inquiry is in.</h3><p style="color:var(--muted)">Our team reviews every inquiry personally. We will be in touch shortly to confirm next steps and access.</p></div>';});})();
 </script>
 </body>
 </html>
