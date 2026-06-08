@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Owners Club — Coast 2 Coast Properties</title>
+<meta name="description" content="An exclusive first look at the Coast 2 Coast deal platform for Owners Club members. Watch your welcome film, then register as a buyer or seller.">
+<meta name="robots" content="noindex,follow">
+<script>document.documentElement.className+=' js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="icon" href="assets/img/logo.png">
+</head>
+<body>
+<header class="header" id="header">
+  <div class="header__in">
+    <a class="brand" href="index.html" aria-label="Coast 2 Coast Properties — home">
+      <img src="assets/img/logo.png" alt="">
+      <span><span class="brand__name">Coast 2 Coast</span><span class="brand__sub">Properties</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="platform.html">The Platform</a>
+      <a href="buyers.html">Buyers</a>
+      <a href="brokers.html">Brokers</a>
+      <a href="bnb.html">BnB</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://coast2coast.thedealfloor.com" class="btn btn-gold btn-sm">Login</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero grain">
+  <canvas id="floor-canvas" aria-hidden="true"></canvas>
+  <div class="page-hero__scrim"></div>
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light reveal" style="margin-top:18px">Owners Club &mdash; Private First Look</p>
+    <h1 class="reveal" style="--d:120ms">Welcome to the floor,<br>before anyone else.</h1>
+    <p class="lede reveal" style="--d:240ms">As an Owners Club member, you get first access to the Coast 2 Coast deal platform &mdash; ahead of the public. Watch your short welcome film below, then claim your seat as a buyer or a seller.</p>
+  </div>
+</section>
+
+<!-- ============ WELCOME VIDEO ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="kicker center reveal">
+      <p class="eyebrow">Start Here</p>
+      <span class="rule rule--center"></span>
+      <h2>Your two-minute introduction to the platform.</h2>
+    </div>
+
+    <!-- VIDEO: native .video component. To go live, replace the .video__ph
+         block below with an <iframe>/<video> — see comment after this block. -->
+    <div class="video grain reveal" id="oc-video">
+      <div class="video__ph">
+        <button class="play" aria-label="Play welcome film (coming soon)"><span class="tri"></span></button>
+        <span class="label">Welcome Film &mdash; Drops In Here</span>
+      </div>
+    </div>
+    <!--
+      WHEN THE VIDEO IS READY, swap the inner .video__ph for one of:
+
+      YouTube:
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+              style="position:absolute;inset:0;width:100%;height:100%;border:0"
+              allow="autoplay;fullscreen;picture-in-picture" allowfullscreen></iframe>
+
+      Vimeo:
+      <iframe src="https://player.vimeo.com/video/VIDEO_ID?title=0&byline=0&portrait=0"
+              style="position:absolute;inset:0;width:100%;height:100%;border:0"
+              allow="autoplay;fullscreen;picture-in-picture" allowfullscreen></iframe>
+
+      Self-hosted (uploaded to the site, e.g. assets/video/oc-welcome.mp4):
+      <video controls poster="assets/img/oc-poster.jpg"
+             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <source src="assets/video/oc-welcome.mp4" type="video/mp4">
+      </video>
+    -->
+  </div>
+</section>
+
+<!-- ============ REGISTER — BUYER / SELLER ============ -->
+<section class="section section--tint">
+  <div class="wrap">
+    <div class="kicker center reveal">
+      <p class="eyebrow">Claim Your Seat</p>
+      <span class="rule rule--center"></span>
+      <h2>Register in under two minutes.</h2>
+      <p class="lede head--center">Choose how you want to participate. You can always do both later &mdash; start with whichever fits you today.</p>
+    </div>
+
+    <div class="cols2" style="max-width:880px;margin:54px auto 0">
+      <div class="vcard reveal" style="--d:80ms;text-align:center">
+        <div class="medallion" style="margin:0 auto 4px">&#9733;</div>
+        <h3>I'm a Buyer</h3>
+        <p>Get matched to off-market commercial deals that fit your buy box &mdash; multifamily, commercial, land, RV parks, storage, and more. Sign the NDA, put your criteria on file, and deals come to you.</p>
+        <div style="margin-top:24px">
+          <a href="https://coast2coast.thedealfloor.com/sign-up?role=buyer&src=oc" class="btn btn-gold">Register as a Buyer <span class="ar">&rarr;</span></a>
+        </div>
+      </div>
+
+      <div class="vcard reveal" style="--d:180ms;text-align:center">
+        <div class="medallion" style="margin:0 auto 4px">&#9650;</div>
+        <h3>I'm a Seller</h3>
+        <p>Have a property to move? List it inside a private, gated marketplace where it reaches verified, capital-ready buyers &mdash; with every relationship protected and every step tracked through C2C.</p>
+        <div style="margin-top:24px">
+          <a href="https://coast2coast.thedealfloor.com/sign-up?role=seller&src=oc" class="btn btn-ghost">Register as a Seller</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="reveal" style="text-align:center;margin-top:34px;color:var(--muted);font-size:.96rem">
+      Already a member? <a href="https://coast2coast.thedealfloor.com" style="color:var(--gold-300)">Sign in here &rarr;</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="kicker center reveal">
+      <p class="eyebrow">Why Owners Club Goes First</p>
+      <span class="rule rule--center"></span>
+      <h2>Speed, trust, exclusivity &mdash; coast to coast.</h2>
+    </div>
+    <div class="features">
+      <article class="feature reveal" style="--d:80ms"><div class="medallion">&#9678;</div><h3>First Access</h3><p>You see the platform &mdash; and the deals &mdash; before it opens to the public. Owners Club members are the founding network on the floor.</p></article>
+      <article class="feature reveal" style="--d:170ms"><div class="medallion">&#10148;</div><h3>Verified Network</h3><p>Every buyer and seller is vetted before they transact. Proof of funds on file, relationships protected, no tire-kickers.</p></article>
+      <article class="feature reveal" style="--d:260ms"><div class="medallion">&#9650;</div><h3>Move Fast</h3><p>From NDA to offer to executed LOI, the platform removes every unnecessary step. When a deal fits, you act in minutes.</p></article>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <div class="footer__cols">
+      <div>
+        <img src="assets/img/logo_transparent.png" alt="Coast 2 Coast Properties">
+        <p style="max-width:34ch;font-size:.96rem">A private marketplace for off-market commercial real estate. Speed, trust, exclusivity — coast to coast.</p>
+      </div>
+      <div><h4>Explore</h4><a href="platform.html">The Platform</a><a href="buyers.html">For Buyers</a><a href="brokers.html">For Brokers</a><a href="bnb.html">Coast 2 Coast BnB</a></div>
+      <div><h4>Company</h4><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="https://coast2coast.thedealfloor.com">Member Login</a></div>
+      <div><h4>Get In Touch</h4><a href="contact.html">Inquiries &amp; Support</a><a href="#"><em>Phone — placeholder</em></a><a href="#"><em>Email — placeholder</em></a></div>
+    </div>
+    <div class="footer__fine">
+      <span>&copy; 2026 Coast 2 Coast Properties. All rights reserved.</span>
+      <span>Buyers conduct their own due diligence. Coast 2 Coast Properties is not a broker or agent.</span>
+    </div>
+  </div>
+</footer>
+<script src="js/deal-floor.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
