@@ -1,0 +1,12 @@
+# Coast 2 Coast Properties — static site config
+
+Options -MultiViews
+RewriteEngine On
+
+# Clean URLs: serve /page from /page.html when that file exists.
+# Only fires when the .html file is real and the request isn't a directory,
+# so /oc -> oc.html, /platform -> platform.html, etc. Existing .html links
+# (nav, footer, shared links) keep working unchanged.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
